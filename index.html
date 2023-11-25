@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            padding: 20px;
+            position: relative; /* Tambahkan ini untuk mengatur posisi relatif */
+        }
+
+        .card {
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .card-header {
+            background-color: #f2f2f2;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid #dddddd;
+            position: relative; /* Tambahkan ini untuk mengatur posisi relatif */
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-home {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card shadow">
+            <div class="card-header">
+                <!-- Tombol HOME dengan kelas btn dan btn-home -->
+                <h2>𝔸𝕣𝕥𝕁𝕠𝕘 || 𝕄𝕦𝕤𝕖𝕦𝕞 𝕊𝕖𝕟𝕚 𝕕𝕚 𝕐𝕠𝕘𝕪𝕒𝕜𝕒𝕣𝕥𝕒</h2>
+                <h5>Input Museum di Yogyakarta</h5>
+                <div class="btn-group btn-group">
+                    <a href="index.php" class="btn btn-primary">Cancel</a>
+                </div>
+            </div>
+            <div class="card-body">
+                <form action="input.php" onsubmit="return validateForm()" method="post">
+                    <label for="kabupaten">Kabupaten:</label><br>
+                    <input type="text" id="kabupaten" name="kabupaten" value=""><br>
+                    <label for="museum">Museum:</label><br>
+                    <input type="text" id="museum" name="museum" value=""><br>
+                    <label for="alamat">Alamat:</label><br>
+                    <input type="alamat" id="alamat" name="alamat" value=""><br><br>
+                    <input type="submit" value="Submit">
+                </form>
+                <p id="informasi"></p>
+                <script>
+                    function validateForm() {
+            
+                        let luas = document.getElementById("luas").value;
+                        let text = "";
+                        if (isNaN(luas) || luas < 1) {
+                            text = "Data luas harus angka dan tidak boleh bernilai negatif";
+                            // stop the form submission
+                            event.preventDefault();
+                        }
+                        document.getElementById("informasi").innerHTML = text;
+                    }
+                </script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
